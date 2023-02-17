@@ -24,10 +24,11 @@ namespace RsDuplicate.Hero
         private double DamageAttribute;
         public double damageattribute { get => DamageAttribute; set => DamageAttribute = value; }
 
-        private Dictionary<Slots, Items?> Equipment = new Dictionary<Slots, Items?>();
-        private HeroAttributes heroAttributes;
-        WeaponTypes validWeaponTypes;
-        ArmorTypes validArmorTypes;
+        public Dictionary<Slots, Items?> Equipment = new Dictionary<Slots, Items?>();
+        public HeroAttributes heroAttributes;
+
+        public List<WeaponTypes> weaponTypes;
+        public List<ArmorTypes> armorTypes;
 
         //Constructor for the Hero, creates a hero with a Name ONLY - as requested.
         public HeroTemplate(string name)
@@ -35,6 +36,11 @@ namespace RsDuplicate.Hero
 
             Name = name;
             Level = 1;
+
+            weaponTypes = new List<WeaponTypes>();
+            armorTypes = new List<ArmorTypes>();
+
+            heroAttributes = new HeroAttributes(1, 1, 1);
 
             try
             {
@@ -78,7 +84,7 @@ namespace RsDuplicate.Hero
         // However i wanted it to be like this because it was easier to follow the code structure
         public void EquipArmor(Armor armor)
         {
-            if (armor.armorTypes == validArmorTypes)
+            if (armorTypes.Contains(armor.armorTypes))
             {
                 Equipment.Remove(armor.slots);
                 Equipment.Add(armor.slots, armor);
@@ -92,15 +98,16 @@ namespace RsDuplicate.Hero
 
         public void EquipWeapon(Weapon weapon)
         {
-            if (weapon.WType == validWeaponTypes)
-            {
+            Console.WriteLine("The weapon type: " + weapon.WType);
+            Console.WriteLine("The valid weapon type: " + weaponTypes);
 
-                Equipment.Remove(Slots.Weapon);
-                Equipment.Add(Slots.Weapon, weapon);
-            }
-            else
+            foreach (WeaponTypes wType in weaponTypes)
             {
-                throw new InvalidWeaponException();
+                if (weapon.WType == wType)
+                {
+                    Equipment.Remove(Slots.Weapon);
+                    Equipment.Add(Slots.Weapon, weapon);
+                }
             }
         }
 

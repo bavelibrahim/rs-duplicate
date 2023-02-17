@@ -12,8 +12,7 @@ namespace RsDuplicate
 
             Mage pavelMage = new Mage("Pavel");
 
-            pavelMage.LevelUp();
-            Weapon wand = new Weapon("Wand", 1, Slots.Weapon, 2, WeaponTypes.Wand);
+            Weapon wand = new Weapon("Wand", 1, Slots.Weapon, 1, WeaponTypes.Wand);
 
             pavelMage.EquipWeapon(wand);
 

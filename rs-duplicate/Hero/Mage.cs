@@ -14,7 +14,6 @@ namespace RsDuplicate.Hero
         public int Dexterity;
         public int Intelligence;
         public WeaponTypes WeaponTypes { get; set; }
-        private WeaponTypes weapontype { get; set; }
         public ArmorTypes Armortype { get; set; }
 
         public Mage(string Name) : base(Name)

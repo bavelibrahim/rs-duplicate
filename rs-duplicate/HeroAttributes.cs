@@ -13,7 +13,7 @@ namespace RsDuplicate
         public int Dexterity { get; set; }
         public int Intelligence { get; set; }
 
-        public HeroAttributes(int Strength, int Dexterity, int Intelligence, int ArmorAttribute) { 
+        public HeroAttributes(int Strength, int Dexterity, int Intelligence) { 
             this.Strength = Strength;
             this.Dexterity = Dexterity;
             this.Intelligence = Intelligence;

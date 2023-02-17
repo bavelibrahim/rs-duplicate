@@ -21,17 +21,16 @@ namespace RsDuplicate.Equipment
 
         // These are the ArmorTypes attributes for the ArmorTypes
 
-        private HeroAttributes ArmorAttributes;
         private ArmorTypes ArmorTypes;
 
-        public HeroAttributes armorAttributes { get => ArmorAttributes;  set => ArmorAttributes = value; }
+        public HeroAttributes armorAttributes;
         public ArmorTypes armorTypes { get => ArmorTypes; set => ArmorTypes = value; }
 
         public Armor(string name, int requiredLevel, Slots slots, HeroAttributes armorAttribute, ArmorTypes armorTypes) : base(name, requiredLevel, slots)
         {
-            ArmorAttributes.Strength = armorAttribute.Strength;
-            ArmorAttributes.Dexterity = armorAttribute.Dexterity;
-            ArmorAttributes.Intelligence = armorAttribute.Intelligence;
+            armorAttributes.Strength = armorAttribute.Strength;
+            armorAttributes.Dexterity = armorAttribute.Dexterity;
+            armorAttributes.Intelligence = armorAttribute.Intelligence;
 
             ArmorTypes = armorTypes;
         }

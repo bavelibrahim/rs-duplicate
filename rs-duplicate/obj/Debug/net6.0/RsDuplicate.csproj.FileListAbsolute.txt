@@ -1,0 +1,15 @@
+C:\Users\PShwan\source\repos\RsDuplicate\bin\Debug\net6.0\RsDuplicate.exe
+C:\Users\PShwan\source\repos\RsDuplicate\bin\Debug\net6.0\RsDuplicate.deps.json
+C:\Users\PShwan\source\repos\RsDuplicate\bin\Debug\net6.0\RsDuplicate.runtimeconfig.json
+C:\Users\PShwan\source\repos\RsDuplicate\bin\Debug\net6.0\RsDuplicate.dll
+C:\Users\PShwan\source\repos\RsDuplicate\bin\Debug\net6.0\RsDuplicate.pdb
+C:\Users\PShwan\source\repos\RsDuplicate\obj\Debug\net6.0\RsDuplicate.csproj.AssemblyReference.cache
+C:\Users\PShwan\source\repos\RsDuplicate\obj\Debug\net6.0\RsDuplicate.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\PShwan\source\repos\RsDuplicate\obj\Debug\net6.0\RsDuplicate.AssemblyInfoInputs.cache
+C:\Users\PShwan\source\repos\RsDuplicate\obj\Debug\net6.0\RsDuplicate.AssemblyInfo.cs
+C:\Users\PShwan\source\repos\RsDuplicate\obj\Debug\net6.0\RsDuplicate.csproj.CoreCompileInputs.cache
+C:\Users\PShwan\source\repos\RsDuplicate\obj\Debug\net6.0\RsDuplicate.dll
+C:\Users\PShwan\source\repos\RsDuplicate\obj\Debug\net6.0\refint\RsDuplicate.dll
+C:\Users\PShwan\source\repos\RsDuplicate\obj\Debug\net6.0\RsDuplicate.pdb
+C:\Users\PShwan\source\repos\RsDuplicate\obj\Debug\net6.0\RsDuplicate.genruntimeconfig.cache
+C:\Users\PShwan\source\repos\RsDuplicate\obj\Debug\net6.0\ref\RsDuplicate.dll

@@ -10,8 +10,8 @@ namespace RsDuplicate
         private int Dexterity = 2;
         private int Intelligence = 1;
 
-        WeaponTypes Weapontype { get; set; }
-        ArmorTypes Armortype { get; set; }
+        public WeaponTypes Weapontype;
+        public ArmorTypes Armortype;
 
         public Warrior(string Name) : base(Name)
         {

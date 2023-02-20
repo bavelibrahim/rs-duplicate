@@ -70,19 +70,21 @@ namespace RsDuplicate.Hero
         {
             Console.WriteLine("Hello i am here!");
 
-            if (armorTypes.Contains(armor.ArmorTypes))
+            if (!armorTypes.Contains(armor.ArmorTypes))
             {
+                throw new InvalidArmorTypeException();
+            }
+            else if (armor.requiredLevel > Level) { throw new InvalidArmorLevelException(); }
+            else {
                 Equipment.Remove(armor.slots);
                 Equipment.Add(armor.slots, armor);
             }
-            else if (armor.requiredLevel > Level) { throw new InvalidArmorLevelException(); }
-            else { throw new InvalidArmorTypeException(); }
         }
 
         public void EquipWeapon(Weapon weapon)
         {
 
-            Console.WriteLine("Weapon type for mage is: " + weapon.WeaponType);
+            //Console.WriteLine("Weapon type for mage is: " + weapon.WeaponType);
 
             if (weapon.requiredLevel > Level)
             {

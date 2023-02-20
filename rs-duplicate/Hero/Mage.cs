@@ -8,8 +8,8 @@ namespace RsDuplicate.Hero
         public int Strength = 1;
         public int Dexterity = 1;
         public int Intelligence = 8;
-        public WeaponTypes WeaponTypes { get; set; }
-        public ArmorTypes Armortype { get; set; }
+        public WeaponTypes WeaponTypes;
+        public ArmorTypes Armortype;
 
         public Mage(string Name) : base(Name)
         {

@@ -11,8 +11,8 @@ namespace RsDuplicate.Hero
         private int Dexterity = 7;
         private int Intelligence = 1;
 
-        WeaponTypes WeaponType { get; set; }
-        ArmorTypes Armortype { get; set; }
+        public WeaponTypes WeaponType;
+        public ArmorTypes Armortype;
 
 
         public Ranger(string Name) : base(Name) 

@@ -3,10 +3,10 @@
     <img src="SignLanguageLogo.png" alt="Logo" width=72 height=72>
   </a>
 
-  <h3 align="center">Lost in Translation</h3>
+  <h3 align="center">RPG Duplicate</h3>
 
   <p align="center">
-    Translate English words to Sign Language
+    Logic Based RPG Clone in C#
   </p>
 </p>
 
@@ -22,38 +22,22 @@
 
 ## About The Project
 
-Lost in Translation is a web application made by Pavel Ibrahim as the second assignment in the advanced Noroff Accelerate program at Noroff. The web application is able to translate english letters to sign language! Users and translations history will be stored in a api and updated based on activity from the user. The web application is developed with Reactjs. 
+RS-Duplicate is a project inspired by Runescape logic and one of the projects i have received in the Noroff Advanced .NET Fullstack Program. In this project we create different Hero types, Armor and weapon types with Unit testing included. 
 
 ## Getting Started
 
-Since the application is made with React and .NET it is necessary to download the required libraries and tools
+The application is made with C# and created in Visual Studio.
 
 ### Prerequisites
 
-You need to have the .NET framework installed. This can be installed through Microsofts official website: [Download .NET](https://dotnet.microsoft.com/en-us/)
-
-Earlier i mentioned that React was used in this project therefore we need the tools for installation and we also need to install the libraries. 
-To install React we need npm and Node.js, this can be done through here: [Download npm and Node.js](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm)
-
-Lastly we need to install the React Libraries that were used in this project. These were installed through the command line.
-
-`npm install react`
-`npm install react-router-dom`
-`npm install react-hook-form`
-`npm install react-scripts`
-`npm install react-dom`
+You need to install Visual Studio and use the C# framework and prerequisites in the 
 
 ### Tools Used
 
 Tools that were used in this project:
 
-- [Visual Studio Code](https://code.visualstudio.com/)
-- [npm & Node.js](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm)
-- [React](#prerequisites)
+- [Visual Studio](https://visualstudio.microsoft.com/)
 - [Marktext (Editor)](https://github.com/marktext/marktext)
-- [Google Chrome](https://www.google.com/chrome/?brand=YTUH&gclid=EAIaIQobChMIxITDhrrv_AIVIwjmCh0xXw1eEAAYASAAEgKHW_D_BwE&gclsrc=aw.ds)
-- Better Comments (Visual Studio Code Extension)
-- Live Server (Visual Studio Code Extension) 
 
 ## Installation
 

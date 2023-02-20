@@ -48,13 +48,13 @@ namespace RsDuplicate.Hero
                     heroAttributes.LevelUp(1, 1, 5); break;
 
                 case Warrior:
-                    heroAttributes.LevelUp(2, 3, 1); break;
+                    heroAttributes.LevelUp(3, 2, 1); break;
 
                 case Ranger:
-                    heroAttributes.LevelUp(5, 1, 1); break;
+                    heroAttributes.LevelUp(1, 5, 1); break;
 
                 case Rogue:
-                    heroAttributes.LevelUp(4, 1, 1); break;
+                    heroAttributes.LevelUp(1, 4, 1); break;
 
                 default: break; // This shouldn't happen, but will return the hero if it does for some reason....
             }

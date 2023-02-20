@@ -12,10 +12,17 @@ namespace rs_test
         public void CreateMage_CorrectName()
         {
 
-            // Creating Mage type and giving the hero a name
-
             Mage mage = new Mage("Gandalf the Purple");
             Assert.Equal("Gandalf the Purple", mage.Name);
+
+        }
+
+        [Fact]
+        public void CreateMage_CorrectStartLevel()
+        {
+
+            Mage mage = new Mage("Gandalf the Purple");
+            Assert.Equal(1 , mage.Level);
 
         }
 
@@ -23,7 +30,6 @@ namespace rs_test
         public void CreateRanger_CorrectName()
         {
 
-            // Creating Mage type and giving the hero a name
 
             Ranger ranger = new Ranger("Robin Hood");
             Assert.Equal("Robin Hood", ranger.Name);
@@ -31,10 +37,16 @@ namespace rs_test
         }
 
         [Fact]
-        public void CreateRogue_CorrectName()
+        public void CreateRanger_CorrectStartLevel()
         {
 
-            // Creating Mage type and giving the hero a name
+            Ranger ranger = new Ranger("Robin Hood");
+            Assert.Equal(1, ranger.Level);
+        }
+
+        [Fact]
+        public void CreateRogue_CorrectName()
+        {
 
             Rogue rogue = new Rogue("Rogie");
             Assert.Equal("Rogie", rogue.Name);
@@ -42,17 +54,62 @@ namespace rs_test
         }
 
         [Fact]
-        public void CreateWarrior_CorrectName()
+        public void CreateRogue_CorrectStartLevel()
         {
 
-            // Creating Mage type and giving the hero a name
+            Rogue rogue = new Rogue("Rogie");
+            Assert.Equal( 1, rogue.Level);
+
+        }
+
+        [Fact]
+        public void CreateWarrior_CorrectName()
+        {
 
             Warrior warrior = new Warrior("Geralt");
             Assert.Equal("Geralt", warrior.Name);
 
         }
 
+        [Fact]
+        public void CreateWarrior_CorrectStartLevel()
+        {
 
+            Warrior warrior = new Warrior("Geralt");
+            Assert.Equal(1, warrior.Level);
+
+        }
+
+        [Fact]
+        public void CreateMage_CorrectStartAttributes()
+        {
+            Mage mage = new Mage("Gandalf");
+            HeroAttributes heroAttributes = new(1, 1, 8);
+            Assert.Equivalent(mage.heroAttributes, heroAttributes);
+        }
+
+        [Fact]
+        public void CreateRanger_CorrectStartAttributes()
+        {
+            Ranger ranger = new Ranger("Gandalf");
+            HeroAttributes heroAttributes = new(1, 7, 1);
+            Assert.Equivalent(ranger.heroAttributes, heroAttributes);
+        }
+        [Fact]
+        public void CreateRogue_CorrectStartAttributes()
+        {
+            Rogue rogue = new Rogue("Gandalf");
+            HeroAttributes heroAttributes = new(2, 6, 1);
+            Assert.Equivalent(rogue.heroAttributes, heroAttributes);
+        }
+
+        [Fact]
+        public void CreateWarrior_CorrectStartAttributes()
+        {
+            Warrior warrior = new Warrior("Gandalf");
+            HeroAttributes heroAttributes = new(5, 2, 1);
+            Assert.Equivalent(warrior.heroAttributes, heroAttributes);
+        }
 
     }
 }

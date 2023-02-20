@@ -8,16 +8,19 @@ namespace RsDuplicate
         static void Main(string[] args)
         {
 
-            Mage mage = new("Elian");
+            Warrior warrior = new("Elian");
 
-            HeroAttributes attributes = new(1, 2, 0);
+            int TotalAttributes = warrior.TotalAttributes();
+            Console.WriteLine("TotalAttributes before: " + TotalAttributes);
+
+            HeroAttributes attributes = new(1, 2, 2);
 
             Armor armorPlate = new("Elians Armor", 1, Slots.Head, attributes, ArmorTypes.Plate);
 
-            mage.EquipArmor(armorPlate);
+            warrior.EquipArmor(armorPlate);
 
-
-
+            TotalAttributes = warrior.TotalAttributes();
+            Console.WriteLine("TotalAttributes After Equipping armor: " + TotalAttributes);
 
         }
     }

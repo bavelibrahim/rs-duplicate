@@ -18,6 +18,8 @@ namespace RsDuplicate
         {
 
             heroAttributes = new(Strength, Dexterity, Intelligence);
+            DamageAttribute = 6;
+
 
             WeaponType = WeaponTypes.Dagger | WeaponTypes.Sword;
             Armortype = ArmorTypes.Leather | ArmorTypes.Mail;

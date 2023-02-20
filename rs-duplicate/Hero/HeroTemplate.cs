@@ -12,8 +12,8 @@ namespace RsDuplicate.Hero
         public double DamageAttribute;
 
         public HeroAttributes heroAttributes = new(0, 0, 0);
-        public Dictionary<Slots, Items?> Equipment = new();
-
+        public Dictionary<Slots, Items> Equipment;
+        public List<Items> items = new List<Items>();
         private List<WeaponTypes> weaponTypes;
         private List<ArmorTypes> armorTypes;
 
@@ -26,8 +26,11 @@ namespace RsDuplicate.Hero
             Name = name;
             Level = 1;
 
+            DamageAttribute = 1;
+
             weaponTypes = Enum.GetValues(typeof(WeaponTypes)).Cast<WeaponTypes>().ToList();
             armorTypes = Enum.GetValues(typeof(ArmorTypes)).Cast<ArmorTypes>().ToList();
+            Equipment = new();
 
             try
             {
@@ -71,21 +74,17 @@ namespace RsDuplicate.Hero
         // However i wanted it to be like this because it was easier to follow the code structure
         public void EquipArmor(Armor armor)
         {
-            Console.WriteLine("Hello i am here!");
-
-            bool contains = armorTypes.Contains(armor.ArmorTypes);
-
-            Console.WriteLine("It does contain: " + contains);
-
             if (armor.requiredLevel > Level)
             {
                 throw new InvalidArmorLevelException();
             }
-            else if (armorTypes.Contains(armor.ArmorTypes))
+            else if (!armorTypes.Contains(armor.ArmorTypes))
             {
                 throw new InvalidArmorTypeException();
             }
-            else {  
+            else if (armorTypes.Contains(armor.ArmorTypes)) {
+                Console.WriteLine("Hello dude!");
+
                 Equipment.Remove(armor.slots);
                 Equipment.Add(armor.slots, armor);
             }
@@ -117,7 +116,7 @@ namespace RsDuplicate.Hero
             double DamageValue = 1;
 
             if (Equipment[Slots.Weapon] != null) {
-                Weapon weapon = (Weapon)Equipment[Slots.Weapon];
+                Weapon? weapon = Equipment[Slots.Weapon] as Weapon;
                 DamageValue = weapon.WeaponDamage;
             }
 
@@ -137,8 +136,6 @@ namespace RsDuplicate.Hero
                     break;
             }
 
-            Console.WriteLine("DamageAttribute is: " + DamageAttribute);
-
             if (Equipment[Slots.Weapon] != null)
             {
                 return DamageValue * (1 + (DamageAttribute/100));
@@ -148,46 +145,38 @@ namespace RsDuplicate.Hero
         public int TotalAttributes()
         {
 
-            int TotalAttributes =
-                heroAttributes.Strength +
-                heroAttributes.Intelligence +
-                heroAttributes.Dexterity;
+            int TotalAttributes = 0;
 
-            // Iterating through each Equipment that is
-            foreach (Items item in Equipment.Values)
+            foreach (Items item in Equipment.Values) 
             {
-                if (item is Armor)
+                Armor? armor = item as Armor;
+
+                if (armor != null)
                 {
-                    Armor armor = (Armor)item;
-
-                    TotalAttributes += 
-                        (armor.armorAttribute.Strength + 
-                        armor.armorAttribute.Dexterity + 
-                        armor.armorAttribute.Intelligence);
-
-                    heroAttributes.Strength = heroAttributes.Strength + armor.armorAttribute.Strength;
-                    heroAttributes.Dexterity = heroAttributes.Dexterity + armor.armorAttribute.Dexterity;
-                    heroAttributes.Intelligence = heroAttributes.Intelligence + armor.armorAttribute.Intelligence;
+                    heroAttributes.Strength += armor.armorAttribute.Strength;
+                    heroAttributes.Dexterity += armor.armorAttribute.Dexterity;
+                    heroAttributes.Intelligence += armor.armorAttribute.Intelligence;
                 }
             }
+
+            TotalAttributes += heroAttributes.Strength + heroAttributes.Dexterity + heroAttributes.Intelligence;
 
             return TotalAttributes;
         }
 
-        public void Display()
+        public StringBuilder Display()
         {
             StringBuilder builder = new StringBuilder();
 
             builder.AppendLine("Hero Name: " + Name);
             builder.AppendLine("Hero Class: " + GetType().Name);
             builder.AppendLine("Hero Level: " + Level.ToString());
-            TotalAttributes();
             builder.AppendLine("Total Strength: " + heroAttributes.Strength.ToString());
             builder.AppendLine("Total Dexterity: " + heroAttributes.Dexterity.ToString());
             builder.AppendLine("Total Intelligence: " + heroAttributes.Intelligence.ToString());
             builder.AppendLine("Hero Damage: " + Damage().ToString());
 
-            Console.WriteLine(builder.ToString());
+            return builder;
         }
     }
 }

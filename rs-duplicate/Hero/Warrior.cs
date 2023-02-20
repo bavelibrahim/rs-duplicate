@@ -16,6 +16,7 @@ namespace RsDuplicate
         public Warrior(string Name) : base(Name)
         {
             heroAttributes = new(Strength, Dexterity, Intelligence);
+            DamageAttribute = 5;
 
             Weapontype = WeaponTypes.Sword | WeaponTypes.Axe | WeaponTypes.Hammer;
             Armortype = ArmorTypes.Mail | ArmorTypes.Plate;

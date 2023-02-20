@@ -18,6 +18,7 @@ namespace RsDuplicate.Hero
         public Ranger(string Name) : base(Name) 
         {
             heroAttributes = new(Strength, Dexterity, Intelligence);
+            DamageAttribute = 7;
 
             WeaponType = WeaponTypes.Bow;
             Armortype = ArmorTypes.Leather | ArmorTypes.Mail;

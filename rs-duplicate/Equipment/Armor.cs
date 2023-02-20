@@ -20,7 +20,6 @@ namespace RsDuplicate.Equipment
         public HeroAttributes armorAttribute;
         private ArmorTypes armorType;
 
-
         public ArmorTypes ArmorTypes { 
             get => armorType; 
             set => armorType = value; 

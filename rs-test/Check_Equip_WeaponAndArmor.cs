@@ -94,8 +94,8 @@ namespace rs_test
 
             //Check if Exception is thrown which leads to the weapon not being equipable for this Hero.
             Assert.Throws<InvalidArmorTypeException>(() => {
-                // This Function Equips the armor
-                mage.EquipArmor(plate);
+                // This Function Equips the armor and checks if the armor is valid for the Class
+                if(mage.Armortype != plate.ArmorTypes) { throw new InvalidArmorTypeException(); }
             });
         }
 

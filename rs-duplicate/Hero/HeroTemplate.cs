@@ -14,8 +14,8 @@ namespace RsDuplicate.Hero
         public HeroAttributes heroAttributes = new(0, 0, 0);
         public Dictionary<Slots, Items?> Equipment = new();
 
-        private List<WeaponTypes> weaponTypes = Enum.GetValues(typeof(WeaponTypes)).Cast<WeaponTypes>().ToList();
-        private List<ArmorTypes> armorTypes = Enum.GetValues(typeof(ArmorTypes)).Cast<ArmorTypes>().ToList();
+        private List<WeaponTypes> weaponTypes;
+        private List<ArmorTypes> armorTypes;
 
 
         //Constructor for the Hero, creates a hero with a Name ONLY - as requested.
@@ -25,6 +25,9 @@ namespace RsDuplicate.Hero
 
             Name = name;
             Level = 1;
+
+            weaponTypes = Enum.GetValues(typeof(WeaponTypes)).Cast<WeaponTypes>().ToList();
+            armorTypes = Enum.GetValues(typeof(ArmorTypes)).Cast<ArmorTypes>().ToList();
 
             try
             {
@@ -70,15 +73,23 @@ namespace RsDuplicate.Hero
         {
             Console.WriteLine("Hello i am here!");
 
-            if (!armorTypes.Contains(armor.ArmorTypes))
+            bool contains = armorTypes.Contains(armor.ArmorTypes);
+
+            Console.WriteLine("It does contain: " + contains);
+
+            if (armor.requiredLevel > Level)
+            {
+                throw new InvalidArmorLevelException();
+            }
+            else if (armorTypes.Contains(armor.ArmorTypes))
             {
                 throw new InvalidArmorTypeException();
             }
-            else if (armor.requiredLevel > Level) { throw new InvalidArmorLevelException(); }
-            else {
+            else {  
                 Equipment.Remove(armor.slots);
                 Equipment.Add(armor.slots, armor);
             }
+            
         }
 
         public void EquipWeapon(Weapon weapon)

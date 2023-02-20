@@ -32,7 +32,7 @@ namespace rs_test
         [Fact]
         public void Check_If_Cannot_EquipWeapon_Mage_Type()
         {
-            Warrior warrior = new("Warrior");
+            Warrior warrior = new Warrior("Warrior");
 
             // Staff is one of the types that a Warrior Hero CANNOT equip
             Weapon LightStaff = new("Light", 1, Slots.Weapon, 200, WeaponTypes.Staff);
@@ -53,7 +53,7 @@ namespace rs_test
         [Fact]
         public void Check_If_Cannot_EquipWeapon_Warrior_RequiredLevel()
         {
-            Warrior warrior = new("Warrior");
+            HeroTemplate warrior = new HeroTemplate("Warrior");
 
             // Sword is one of the types that a Warrior Hero can equip
             Weapon sword = new("Light", 3, Slots.Weapon, 200, WeaponTypes.Sword);
@@ -68,7 +68,7 @@ namespace rs_test
         [Fact]
         public void Check_If_Cannot_EquipArmor_Warrior_RequiredLevel()
         {
-            Warrior warrior = new("Warrior");
+            HeroTemplate warrior = new HeroTemplate("Warrior");
 
             HeroAttributes attributes = new(2, 1, 0);
 
@@ -85,12 +85,12 @@ namespace rs_test
         [Fact]
         public void Check_If_Cannot_EquipArmor_Mage_Type()
         {
-            Mage mage = new("Gandalf");
-
+            Mage mage = new Mage("Gandalf");
+            
             HeroAttributes attributes = new(2, 1, 0);
 
             // Plate armor is one of the types that a Mage Hero CANNOT equip
-            Armor plate = new("Paladin Platebody", 1, Slots.Body,attributes, ArmorTypes.Plate);
+            Armor plate = new("Paladin Platebody", 1, Slots.Body, attributes, ArmorTypes.Plate);
 
             //Check if Exception is thrown which leads to the weapon not being equipable for this Hero.
             Assert.Throws<InvalidArmorTypeException>(() => {

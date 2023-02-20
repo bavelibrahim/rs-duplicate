@@ -1,11 +1,11 @@
 ﻿namespace RsDuplicate.Utilities
 {
-    public class InvalidWeaponTypeException : Exception
+    public class InvalidWeaponLevelException : Exception
     {
-        public InvalidWeaponTypeException() { }
+        public InvalidWeaponLevelException() { }
 
-        public InvalidWeaponTypeException(string message): base(String.Format("Weapon cannot be equipped: {0}", message)) { }
+        public InvalidWeaponLevelException(string message): base(String.Format("Level is too high, weapon cannot be equipped: {0}", message)) { }
 
-        public InvalidWeaponTypeException(string message, Exception inner): base(message, inner) { }
+        public InvalidWeaponLevelException(string message, Exception inner): base(message, inner) { }
     }
 }

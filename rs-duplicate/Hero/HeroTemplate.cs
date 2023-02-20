@@ -75,10 +75,8 @@ namespace RsDuplicate.Hero
                 Equipment.Remove(armor.slots);
                 Equipment.Add(armor.slots, armor);
             }
-            else
-            {
-                throw new InvalidArmorException();
-            }
+            else if (armor.requiredLevel > Level) { throw new InvalidArmorLevelException(); }
+            else { throw new InvalidArmorTypeException(); }
         }
 
         public void EquipWeapon(Weapon weapon)
@@ -88,12 +86,11 @@ namespace RsDuplicate.Hero
 
             if (weapon.requiredLevel > Level)
             {
-                Console.WriteLine("Required level is higher than your characters level");
-                
+                throw new InvalidWeaponLevelException();
             }
             else if (!weaponTypes.Contains(weapon.WeaponType))
             {
-                throw new InvalidWeaponException();
+                throw new InvalidWeaponTypeException();
             }
             else {
                 Equipment.Remove(Slots.Weapon);

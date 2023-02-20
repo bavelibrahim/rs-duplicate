@@ -7,6 +7,10 @@ namespace rs_test
     public class Check_Hero_Increment
     {
 
+        // The LevelUp Function which is inside the Hero Class is used to increment the 
+        // 3 values which represents the three stats: Strength, Dexterity and Intelligence.
+        // The incrementation is different for each Hero Type. 
+        
         [Fact]
         public void Mage_LevelUp()
         {

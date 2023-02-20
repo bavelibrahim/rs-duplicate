@@ -51,8 +51,5 @@ namespace rs_test
             Assert.Equivalent(hero.heroAttributes, heroAttributes_AfterLeveLup);
         }
 
-
-
-
     }
 }

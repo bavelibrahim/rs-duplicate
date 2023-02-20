@@ -17,6 +17,8 @@ namespace RsDuplicate.Hero
 
         public Ranger(string Name) : base(Name) 
         {
+            //HeroAttributes is set here and done for each subclass of HeroTemplate
+            //damageattribute is set here as the standard value
             heroAttributes = new(Strength, Dexterity, Intelligence);
             DamageAttribute = 7;
 

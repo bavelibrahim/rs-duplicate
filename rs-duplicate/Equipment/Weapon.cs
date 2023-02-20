@@ -26,6 +26,7 @@ namespace RsDuplicate.Equipment
 
         public Weapon(string name, int requiredLevel, Slots slots, int weaponDamage, WeaponTypes weaponTypes) : base(name, requiredLevel, slots)
         {
+            //Weapondamage and weapontype is set when a new weapon is created.
             WeaponDamage = weaponDamage;
             WeaponType = weaponTypes;
         }

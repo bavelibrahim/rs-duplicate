@@ -27,6 +27,8 @@ namespace RsDuplicate.Equipment
 
         public Armor(string name, int requiredLevel, Slots slots, HeroAttributes attributes, ArmorTypes armorTypes) : base(name, requiredLevel, slots)
         {
+            //Armorattribute is of type HeroAttribute and can be used throughout the code
+            //Armortype is when an armor is created
             armorAttribute = new(attributes.Strength, attributes.Dexterity, attributes.Intelligence);
             armorType = armorTypes;
         }

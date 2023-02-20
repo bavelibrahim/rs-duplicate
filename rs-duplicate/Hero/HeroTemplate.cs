@@ -12,10 +12,10 @@ namespace RsDuplicate.Hero
         public double DamageAttribute;
 
         public HeroAttributes heroAttributes = new(0, 0, 0);
-        public Dictionary<Slots, Items> Equipment;
+        public Dictionary<Slots, Items> Equipment = new();
         public List<Items> items = new List<Items>();
-        private List<WeaponTypes> weaponTypes;
-        private List<ArmorTypes> armorTypes;
+        private List<WeaponTypes> weaponTypes = Enum.GetValues(typeof(WeaponTypes)).Cast<WeaponTypes>().ToList();
+        private List<ArmorTypes> armorTypes = Enum.GetValues(typeof(ArmorTypes)).Cast<ArmorTypes>().ToList();
 
 
         //Constructor for the Hero, creates a hero with a Name ONLY - as requested.
@@ -25,12 +25,6 @@ namespace RsDuplicate.Hero
 
             Name = name;
             Level = 1;
-
-            DamageAttribute = 1;
-
-            weaponTypes = Enum.GetValues(typeof(WeaponTypes)).Cast<WeaponTypes>().ToList();
-            armorTypes = Enum.GetValues(typeof(ArmorTypes)).Cast<ArmorTypes>().ToList();
-            Equipment = new();
 
             try
             {
@@ -78,7 +72,7 @@ namespace RsDuplicate.Hero
             {
                 throw new InvalidArmorLevelException();
             }
-            else if (!armorTypes.Contains(armor.ArmorTypes))
+            else if (!armorTypes.Contains(armor.ArmorTypes)) // If the Armor type is not valid (Not in the valid armortype list) throw custom exception
             {
                 throw new InvalidArmorTypeException();
             }
@@ -100,7 +94,7 @@ namespace RsDuplicate.Hero
             {
                 throw new InvalidWeaponLevelException();
             }
-            else if (!weaponTypes.Contains(weapon.WeaponType))
+            else if (!weaponTypes.Contains(weapon.WeaponType)) // If the Weapon type is not valid (Not in the valid weapontype list) throw custom exception
             {
                 throw new InvalidWeaponTypeException();
             }
@@ -120,6 +114,7 @@ namespace RsDuplicate.Hero
                 DamageValue = weapon.WeaponDamage;
             }
 
+            //Checks what type of weapon it is and then sets the Damage attribute as following...
             switch (this)
             {
                 case Mage:
@@ -136,6 +131,7 @@ namespace RsDuplicate.Hero
                     break;
             }
 
+            // Returns the value of the weapons damage with the formula, otherwise the original damage if there were no weapons equipped.
             if (Equipment[Slots.Weapon] != null)
             {
                 return DamageValue * (1 + (DamageAttribute/100));

@@ -11,7 +11,7 @@ namespace rs_test
     {
 
         [Fact]
-        public void Weapon_Name()
+        public void Weapon_CheckName()
         {
             Weapon weapon = new("Guts GreatSword", 20, Slots.Weapon, 300, WeaponTypes.Sword);
 
@@ -20,7 +20,7 @@ namespace rs_test
         }
 
         [Fact]
-        public void Weapon_RequiredLevel()
+        public void Weapon_CheckCorrectRequiredLevel()
         {
             Weapon weapon = new("Guts GreatSword", 20, Slots.Weapon, 300, WeaponTypes.Sword);
 
@@ -29,7 +29,7 @@ namespace rs_test
         }
 
         [Fact]
-        public void Weapon_Slot()
+        public void Weapon_CheckCorrectSlot()
         {
             Weapon weapon = new("Guts GreatSword", 20, Slots.Weapon, 300, WeaponTypes.Sword);
 
@@ -38,12 +38,21 @@ namespace rs_test
         }
 
         [Fact]
-        public void Weapon_WeaponType()
+        public void Weapon_CheckWeaponType()
         {
             Weapon weapon = new("Guts GreatSword", 20, Slots.Weapon, 300, WeaponTypes.Sword);
 
             WeaponTypes weaponType = WeaponTypes.Sword;
             Assert.Equivalent(weapon.WeaponType, weaponType);
+        }
+
+        [Fact]
+        public void Weapon_CheckCorrectDamage()
+        {
+            Weapon weapon = new("Guts GreatSword", 20, Slots.Weapon, 300, WeaponTypes.Sword);
+
+            int weaponDamage = 300;
+            Assert.Equal(weapon.WeaponDamage, weaponDamage);
         }
 
     }

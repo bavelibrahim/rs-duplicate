@@ -12,9 +12,9 @@ namespace RsDuplicate.Hero
         // Start Values for a Level 1 Ranger
 
 
-        private int Strength { get; set; }  
-        private int Dexterity { get; set; }
-        private int Intelligence { get; set; }
+        private int Strength = 1;
+        private int Dexterity = 7;
+        private int Intelligence = 1;
 
         WeaponTypes WeaponType { get; set; }
         ArmorTypes Armortype { get; set; }
@@ -22,9 +22,7 @@ namespace RsDuplicate.Hero
 
         public Ranger(string Name) : base(Name) 
         {
-            Strength = 1;
-            Dexterity = 7;
-            Intelligence = 1;
+            heroAttributes = new(Strength, Dexterity, Intelligence);
 
             WeaponType = WeaponTypes.Bow;
             Armortype = ArmorTypes.Leather | ArmorTypes.Mail;

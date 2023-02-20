@@ -11,9 +11,9 @@ namespace RsDuplicate
     internal class Rogue : HeroTemplate
     {
         // Start Values for a Level 1 Rogue
-        private int Strength { get; set; }
-        private int Dexterity { get; set; }
-        private int Intelligence { get; set; }
+        private int Strength = 2;
+        private int Dexterity = 6;
+        private int Intelligence = 1;
 
         WeaponTypes WeaponType { get; set; }
         ArmorTypes Armortype { get; set; }
@@ -21,9 +21,8 @@ namespace RsDuplicate
 
         public Rogue(string Name) : base(Name)
         {
-            Strength = 2;
-            Dexterity = 6;
-            Intelligence = 1;
+
+            heroAttributes = new(Strength, Dexterity, Intelligence);
 
             WeaponType = WeaponTypes.Dagger | WeaponTypes.Sword;
             Armortype = ArmorTypes.Leather | ArmorTypes.Mail;

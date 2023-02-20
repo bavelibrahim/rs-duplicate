@@ -1,46 +1,30 @@
 ﻿using RsDuplicate.Equipment;
 using RsDuplicate.Utilities;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net.Mail;
-using System.Reflection;
-using System.Reflection.Emit;
-using System.Runtime.CompilerServices;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace RsDuplicate.Hero
 {
     internal class HeroTemplate
     {
 
-        public int tempStrength;
-        public int tempDexterity;
-        public int tempIntelligence;
-
         public string Name;
-        public int Level;
-        private double DamageAttribute;
-        public double damageattribute { get => DamageAttribute; set => DamageAttribute = value; }
+        public int Level = 1;
+        public double DamageAttribute;
 
-        public Dictionary<Slots, Items?> Equipment = new Dictionary<Slots, Items?>();
-        public HeroAttributes heroAttributes;
+        public HeroAttributes heroAttributes = new(0, 0, 0);
+        public Dictionary<Slots, Items?> Equipment = new();
 
-        public List<WeaponTypes> weaponTypes;
-        public List<ArmorTypes> armorTypes;
+        private List<WeaponTypes> weaponTypes = Enum.GetValues(typeof(WeaponTypes)).Cast<WeaponTypes>().ToList();
+        private List<ArmorTypes> armorTypes = Enum.GetValues(typeof(ArmorTypes)).Cast<ArmorTypes>().ToList();
+
 
         //Constructor for the Hero, creates a hero with a Name ONLY - as requested.
+
         public HeroTemplate(string name)
         {
 
             Name = name;
             Level = 1;
-
-            weaponTypes = new List<WeaponTypes>();
-            armorTypes = new List<ArmorTypes>();
-
-            heroAttributes = new HeroAttributes(1, 1, 1);
 
             try
             {
@@ -59,9 +43,7 @@ namespace RsDuplicate.Hero
 
             switch (this)
             {
-
                 // Incrementing Attribute-Values for each Hero-type.
-
                 case Mage:
                     heroAttributes.LevelUp(1, 1, 5); break;
 
@@ -76,6 +58,8 @@ namespace RsDuplicate.Hero
 
                 default: break; // This shouldn't happen, but will return the hero if it does for some reason....
             }
+
+            Level += 1;
         }
 
 
@@ -84,7 +68,9 @@ namespace RsDuplicate.Hero
         // However i wanted it to be like this because it was easier to follow the code structure
         public void EquipArmor(Armor armor)
         {
-            if (armorTypes.Contains(armor.armorTypes))
+            Console.WriteLine("Hello i am here!");
+
+            if (armorTypes.Contains(armor.ArmorTypes))
             {
                 Equipment.Remove(armor.slots);
                 Equipment.Add(armor.slots, armor);
@@ -95,47 +81,58 @@ namespace RsDuplicate.Hero
             }
         }
 
-
         public void EquipWeapon(Weapon weapon)
         {
-            Console.WriteLine("The weapon type: " + weapon.WType);
-            Console.WriteLine("The valid weapon type: " + weaponTypes);
 
-            foreach (WeaponTypes wType in weaponTypes)
+            Console.WriteLine("Weapon type for mage is: " + weapon.WeaponType);
+
+            if (weapon.requiredLevel > Level)
             {
-                if (weapon.WType == wType)
-                {
-                    Equipment.Remove(Slots.Weapon);
-                    Equipment.Add(Slots.Weapon, weapon);
-                }
+                Console.WriteLine("Required level is higher than your characters level");
+                
+            }
+            else if (!weaponTypes.Contains(weapon.WeaponType))
+            {
+                throw new InvalidWeaponException();
+            }
+            else {
+                Equipment.Remove(Slots.Weapon);
+                Equipment.Add(Slots.Weapon, weapon);
             }
         }
 
         public double Damage()
         {
-            Weapon weapon = Equipment[Slots.Weapon] as Weapon;
-            double DamageValue;
+
+            double DamageValue = 1;
+
+            if (Equipment[Slots.Weapon] != null) {
+                Weapon weapon = (Weapon)Equipment[Slots.Weapon];
+                DamageValue = weapon.WeaponDamage;
+            }
 
             switch (this)
-                    {
-                        case Mage:
-                            DamageAttribute = heroAttributes.Intelligence;
-                            break;
-                        case Ranger:
-                            DamageAttribute = heroAttributes.Dexterity;
-                            break;
-                        case Rogue:
-                            DamageAttribute = heroAttributes.Dexterity;
-                            break;
-                        case Warrior:
-                            DamageAttribute = heroAttributes.Strength;
-                            break;
-                    }
-
-            if (weapon != null)
             {
-                return weapon.WeaponDamage * (1 + (DamageAttribute/100));
-            } else { return DamageAttribute; } //Return one damage if there are no weapons Equipped.
+                case Mage:
+                    DamageAttribute = heroAttributes.Intelligence;
+                    break;
+                case Ranger:
+                    DamageAttribute = heroAttributes.Dexterity;
+                    break;
+                case Rogue:
+                    DamageAttribute = heroAttributes.Dexterity;
+                    break;
+                case Warrior:
+                    DamageAttribute = heroAttributes.Strength;
+                    break;
+            }
+
+            Console.WriteLine("DamageAttribute is: " + DamageAttribute);
+
+            if (Equipment[Slots.Weapon] != null)
+            {
+                return DamageValue * (1 + (DamageAttribute/100));
+            } else { return DamageAttribute; } //Return Damageattribute damage if there are no weapons Equipped.
         }
 
         public int TotalAttributes()
@@ -154,17 +151,15 @@ namespace RsDuplicate.Hero
                     Armor armor = (Armor)item;
 
                     TotalAttributes += 
-                        (armor.armorAttributes.Strength + 
-                        armor.armorAttributes.Dexterity + 
-                        armor.armorAttributes.Intelligence);
+                        (armor.armorAttribute.Strength + 
+                        armor.armorAttribute.Dexterity + 
+                        armor.armorAttribute.Intelligence);
 
-                    tempStrength = heroAttributes.Strength + armor.armorAttributes.Strength;
-                    tempDexterity = heroAttributes.Dexterity + armor.armorAttributes.Dexterity;
-                    tempIntelligence = heroAttributes.Intelligence + armor.armorAttributes.Intelligence;
+                    heroAttributes.Strength = heroAttributes.Strength + armor.armorAttribute.Strength;
+                    heroAttributes.Dexterity = heroAttributes.Dexterity + armor.armorAttribute.Dexterity;
+                    heroAttributes.Intelligence = heroAttributes.Intelligence + armor.armorAttribute.Intelligence;
                 }
             }
-
-
 
             return TotalAttributes;
         }
@@ -173,19 +168,16 @@ namespace RsDuplicate.Hero
         {
             StringBuilder builder = new StringBuilder();
 
-            builder.AppendLine(Name);
-            builder.AppendLine(GetType().Name);
-            builder.AppendLine(Level.ToString());
-            builder.AppendLine(tempStrength.ToString());
-            builder.AppendLine(tempDexterity.ToString());
-            builder.AppendLine(tempIntelligence.ToString());
-            builder.AppendLine(Damage().ToString());
+            builder.AppendLine("Hero Name: " + Name);
+            builder.AppendLine("Hero Class: " + GetType().Name);
+            builder.AppendLine("Hero Level: " + Level.ToString());
+            TotalAttributes();
+            builder.AppendLine("Total Strength: " + heroAttributes.Strength.ToString());
+            builder.AppendLine("Total Dexterity: " + heroAttributes.Dexterity.ToString());
+            builder.AppendLine("Total Intelligence: " + heroAttributes.Intelligence.ToString());
+            builder.AppendLine("Hero Damage: " + Damage().ToString());
 
             Console.WriteLine(builder.ToString());
         }
-
-
     }
-
-
 }

@@ -11,18 +11,16 @@ namespace RsDuplicate
     internal class Warrior : HeroTemplate
     {
         // Start Values for a Level 1 Warrior
-        private int Strength { get; set; }
-        private int Dexterity { get; set; }
-        private int Intelligence { get; set; }
+        private int Strength = 5;
+        private int Dexterity = 2;
+        private int Intelligence = 1;
 
         WeaponTypes Weapontype { get; set; }
         ArmorTypes Armortype { get; set; }
 
         public Warrior(string Name) : base(Name)
         {
-            Strength = 5;
-            Dexterity = 2;
-            Intelligence = 1;
+            heroAttributes = new(Strength, Dexterity, Intelligence);
 
             Weapontype = WeaponTypes.Sword | WeaponTypes.Axe | WeaponTypes.Hammer;
             Armortype = ArmorTypes.Mail | ArmorTypes.Plate;

@@ -28,3 +28,18 @@ C:\Users\bavel\Documents\_NOROFF\BACKEND C#\Assignment01\rs-duplicate\rs-duplica
 C:\Users\bavel\Documents\_NOROFF\BACKEND C#\Assignment01\rs-duplicate\rs-duplicate\obj\Debug\net6.0\RsDuplicate.pdb
 C:\Users\bavel\Documents\_NOROFF\BACKEND C#\Assignment01\rs-duplicate\rs-duplicate\obj\Debug\net6.0\RsDuplicate.genruntimeconfig.cache
 C:\Users\bavel\Documents\_NOROFF\BACKEND C#\Assignment01\rs-duplicate\rs-duplicate\obj\Debug\net6.0\ref\RsDuplicate.dll
+C:\Noroff\CSharp\Assignments\Assignment01\rs-duplicate\rs-duplicate\bin\Debug\net6.0\RsDuplicate.exe
+C:\Noroff\CSharp\Assignments\Assignment01\rs-duplicate\rs-duplicate\bin\Debug\net6.0\RsDuplicate.deps.json
+C:\Noroff\CSharp\Assignments\Assignment01\rs-duplicate\rs-duplicate\bin\Debug\net6.0\RsDuplicate.runtimeconfig.json
+C:\Noroff\CSharp\Assignments\Assignment01\rs-duplicate\rs-duplicate\bin\Debug\net6.0\RsDuplicate.dll
+C:\Noroff\CSharp\Assignments\Assignment01\rs-duplicate\rs-duplicate\bin\Debug\net6.0\RsDuplicate.pdb
+C:\Noroff\CSharp\Assignments\Assignment01\rs-duplicate\rs-duplicate\obj\Debug\net6.0\RsDuplicate.csproj.AssemblyReference.cache
+C:\Noroff\CSharp\Assignments\Assignment01\rs-duplicate\rs-duplicate\obj\Debug\net6.0\RsDuplicate.GeneratedMSBuildEditorConfig.editorconfig
+C:\Noroff\CSharp\Assignments\Assignment01\rs-duplicate\rs-duplicate\obj\Debug\net6.0\RsDuplicate.AssemblyInfoInputs.cache
+C:\Noroff\CSharp\Assignments\Assignment01\rs-duplicate\rs-duplicate\obj\Debug\net6.0\RsDuplicate.AssemblyInfo.cs
+C:\Noroff\CSharp\Assignments\Assignment01\rs-duplicate\rs-duplicate\obj\Debug\net6.0\RsDuplicate.csproj.CoreCompileInputs.cache
+C:\Noroff\CSharp\Assignments\Assignment01\rs-duplicate\rs-duplicate\obj\Debug\net6.0\RsDuplicate.dll
+C:\Noroff\CSharp\Assignments\Assignment01\rs-duplicate\rs-duplicate\obj\Debug\net6.0\refint\RsDuplicate.dll
+C:\Noroff\CSharp\Assignments\Assignment01\rs-duplicate\rs-duplicate\obj\Debug\net6.0\RsDuplicate.pdb
+C:\Noroff\CSharp\Assignments\Assignment01\rs-duplicate\rs-duplicate\obj\Debug\net6.0\RsDuplicate.genruntimeconfig.cache
+C:\Noroff\CSharp\Assignments\Assignment01\rs-duplicate\rs-duplicate\obj\Debug\net6.0\ref\RsDuplicate.dll

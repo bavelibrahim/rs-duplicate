@@ -1,7 +1,6 @@
 ﻿
 using RsDuplicate.Equipment;
 using RsDuplicate.Hero;
-using System;
 
 namespace RsDuplicate
 {
@@ -9,15 +8,16 @@ namespace RsDuplicate
     {
         static void Main(string[] args)
         {
+            Mage pavelMage = new("Pavel");
 
-            Mage pavelMage = new Mage("Pavel");
+            Weapon StaffOfLight = new("Light Staff", 1, Slots.Weapon, 1, WeaponTypes.Staff);
+            HeroAttributes BodyOfProAttributes = new HeroAttributes(1, 1, 3);
+            Armor BodyOfProtection = new Armor("BodyPro", 1, Slots.Body, BodyOfProAttributes, ArmorTypes.Cloth);
 
-            Weapon wand = new Weapon("Wand", 1, Slots.Weapon, 1, WeaponTypes.Wand);
+            pavelMage.EquipWeapon(StaffOfLight);
+            pavelMage.EquipArmor(BodyOfProtection);
 
-            pavelMage.EquipWeapon(wand);
-
-            Console.WriteLine(pavelMage.Damage());
-
+            pavelMage.Display();
         }
     }
 }

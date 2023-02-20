@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using RsDuplicate.Hero;
 
 namespace RsDuplicate.Equipment
 {
@@ -21,18 +17,19 @@ namespace RsDuplicate.Equipment
 
         // These are the ArmorTypes attributes for the ArmorTypes
 
-        private ArmorTypes ArmorTypes;
+        public HeroAttributes armorAttribute;
+        private ArmorTypes armorType;
 
-        public HeroAttributes armorAttributes;
-        public ArmorTypes armorTypes { get => ArmorTypes; set => ArmorTypes = value; }
 
-        public Armor(string name, int requiredLevel, Slots slots, HeroAttributes armorAttribute, ArmorTypes armorTypes) : base(name, requiredLevel, slots)
+        public ArmorTypes ArmorTypes { 
+            get => armorType; 
+            set => armorType = value; 
+        }
+
+        public Armor(string name, int requiredLevel, Slots slots, HeroAttributes attributes, ArmorTypes armorTypes) : base(name, requiredLevel, slots)
         {
-            armorAttributes.Strength = armorAttribute.Strength;
-            armorAttributes.Dexterity = armorAttribute.Dexterity;
-            armorAttributes.Intelligence = armorAttribute.Intelligence;
-
-            ArmorTypes = armorTypes;
+            armorAttribute = new(attributes.Strength, attributes.Dexterity, attributes.Intelligence);
+            armorType = armorTypes;
         }
 
 

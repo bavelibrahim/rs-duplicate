@@ -1,8 +1,4 @@
 <p align="center">
-  <a href="https://example.com/">
-    <img src="SignLanguageLogo.png" alt="Logo" width=72 height=72>
-  </a>
-
   <h3 align="center">RPG Duplicate</h3>
 
   <p align="center">

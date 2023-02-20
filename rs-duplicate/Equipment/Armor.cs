@@ -4,7 +4,7 @@ namespace RsDuplicate.Equipment
 {
 
     [Flags]
-    enum ArmorTypes
+    public enum ArmorTypes
     {
         Cloth = 0,
         Leather = 1,
@@ -12,7 +12,7 @@ namespace RsDuplicate.Equipment
         Plate = 4
     }
 
-    internal class Armor : Items
+    public class Armor : Items
     {
 
         // These are the ArmorTypes attributes for the ArmorTypes

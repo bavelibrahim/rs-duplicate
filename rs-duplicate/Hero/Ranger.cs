@@ -1,13 +1,8 @@
 ﻿using RsDuplicate.Equipment;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace RsDuplicate.Hero
 {
-    internal class Ranger : HeroTemplate
+    public class Ranger : HeroTemplate
     {
         // Start Values for a Level 1 Ranger
 

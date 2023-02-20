@@ -1,7 +1,7 @@
 ﻿
 namespace RsDuplicate.Hero
 {
-    internal class HeroAttributes
+    public class HeroAttributes
     {
 
         public int Strength { get; set; }

@@ -1,14 +1,9 @@
 ﻿using RsDuplicate.Equipment;
 using RsDuplicate.Hero;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace RsDuplicate
 {
-    internal class Rogue : HeroTemplate
+    public class Rogue : HeroTemplate
     {
         // Start Values for a Level 1 Rogue
         private int Strength = 2;

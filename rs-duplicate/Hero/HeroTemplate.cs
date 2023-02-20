@@ -4,7 +4,7 @@ using System.Text;
 
 namespace RsDuplicate.Hero
 {
-    internal class HeroTemplate
+    public class HeroTemplate
     {
 
         public string Name;

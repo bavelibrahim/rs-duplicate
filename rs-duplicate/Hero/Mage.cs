@@ -1,13 +1,8 @@
 ﻿using RsDuplicate.Equipment;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace RsDuplicate.Hero
 {
-    internal class Mage : HeroTemplate
+    public class Mage : HeroTemplate
     {
         // Start Values for a Level 1 Mage
         public int Strength = 1;

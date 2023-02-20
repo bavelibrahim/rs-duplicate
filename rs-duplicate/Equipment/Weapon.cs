@@ -15,7 +15,7 @@ namespace RsDuplicate.Equipment
         Wand = 32
     }
 
-    internal class Weapon : Items
+    public class Weapon : Items
     {
         private int weaponDamage;
         private WeaponTypes weaponType;

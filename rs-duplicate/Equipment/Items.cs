@@ -9,7 +9,7 @@ namespace RsDuplicate.Equipment
         Legs
     }
 
-    internal class Items
+    public class Items
     {
 
         private string Name;

@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace RsDuplicate.Utilities
+﻿namespace RsDuplicate.Utilities
 {
-    internal class InvalidArmorException : Exception
+    public class InvalidArmorException : Exception
     {
         public InvalidArmorException() { }
 

@@ -30,7 +30,7 @@ The application is made with C# and created in Visual Studio.
 
 ### Prerequisites
 
-You need to install Visual Studio and use the C# framework and prerequisites in the 
+You need to install Visual Studio and use the C# extension and prerequisites while downloading the IDE.
 
 ### Tools Used
 

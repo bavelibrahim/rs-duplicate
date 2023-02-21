@@ -16,7 +16,7 @@ namespace rs_test
             Weapon weapon = new("Guts GreatSword", 20, Slots.Weapon, 300, WeaponTypes.Sword);
 
             string Weapon_Name = "Guts GreatSword";
-            Assert.Equal(weapon.name, Weapon_Name);
+            Assert.Equal(Weapon_Name, weapon.name);
         }
 
         [Fact]
@@ -25,7 +25,7 @@ namespace rs_test
             Weapon weapon = new("Guts GreatSword", 20, Slots.Weapon, 300, WeaponTypes.Sword);
 
             int requiredLevel = 20;
-            Assert.Equal(weapon.requiredLevel, requiredLevel);
+            Assert.Equal(requiredLevel, weapon.requiredLevel);
         }
 
         [Fact]
@@ -34,7 +34,7 @@ namespace rs_test
             Weapon weapon = new("Guts GreatSword", 20, Slots.Weapon, 300, WeaponTypes.Sword);
 
             Slots weaponSlot = Slots.Weapon;
-            Assert.Equivalent(weapon.slots, weaponSlot);
+            Assert.Equivalent(weaponSlot, weapon.slots);
         }
 
         [Fact]
@@ -43,7 +43,7 @@ namespace rs_test
             Weapon weapon = new("Guts GreatSword", 20, Slots.Weapon, 300, WeaponTypes.Sword);
 
             WeaponTypes weaponType = WeaponTypes.Sword;
-            Assert.Equivalent(weapon.WeaponType, weaponType);
+            Assert.Equivalent(weaponType, weapon.WeaponType);
         }
 
         [Fact]
@@ -52,7 +52,7 @@ namespace rs_test
             Weapon weapon = new("Guts GreatSword", 20, Slots.Weapon, 300, WeaponTypes.Sword);
 
             int weaponDamage = 300;
-            Assert.Equal(weapon.WeaponDamage, weaponDamage);
+            Assert.Equal(weaponDamage, weapon.WeaponDamage, );
         }
 
     }

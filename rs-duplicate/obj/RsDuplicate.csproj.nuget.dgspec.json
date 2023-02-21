@@ -1,24 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\bavel\\Documents\\_NOROFF\\BACKEND C#\\Assignment01\\rs-duplicate\\rs-duplicate\\RsDuplicate.csproj": {}
+    "C:\\Noroff\\CSharp\\Assignments\\Assignment01\\rs-duplicate\\rs-duplicate\\RsDuplicate.csproj": {}
   },
   "projects": {
-    "C:\\Users\\bavel\\Documents\\_NOROFF\\BACKEND C#\\Assignment01\\rs-duplicate\\rs-duplicate\\RsDuplicate.csproj": {
+    "C:\\Noroff\\CSharp\\Assignments\\Assignment01\\rs-duplicate\\rs-duplicate\\RsDuplicate.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\bavel\\Documents\\_NOROFF\\BACKEND C#\\Assignment01\\rs-duplicate\\rs-duplicate\\RsDuplicate.csproj",
+        "projectUniqueName": "C:\\Noroff\\CSharp\\Assignments\\Assignment01\\rs-duplicate\\rs-duplicate\\RsDuplicate.csproj",
         "projectName": "RsDuplicate",
-        "projectPath": "C:\\Users\\bavel\\Documents\\_NOROFF\\BACKEND C#\\Assignment01\\rs-duplicate\\rs-duplicate\\RsDuplicate.csproj",
-        "packagesPath": "C:\\Users\\bavel\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\bavel\\Documents\\_NOROFF\\BACKEND C#\\Assignment01\\rs-duplicate\\rs-duplicate\\obj\\",
+        "projectPath": "C:\\Noroff\\CSharp\\Assignments\\Assignment01\\rs-duplicate\\rs-duplicate\\RsDuplicate.csproj",
+        "packagesPath": "C:\\Users\\PShwan\\.nuget\\packages\\",
+        "outputPath": "C:\\Noroff\\CSharp\\Assignments\\Assignment01\\rs-duplicate\\rs-duplicate\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\bavel\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\PShwan\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -59,7 +55,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.103\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
         }
       }
     }

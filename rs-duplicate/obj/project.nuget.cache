@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "5Q8pVD1sTXa1ggu2eOQhbB9g05ChbHte5zNY61hoUOuVtHAbaFxjc+p4Oz6O5Y9AI7a13fjCsmHx346l4nVTww==",
+  "dgSpecHash": "hw85gEo3K1wq+bHJOUhT6+dC8zjrRv4sNuxznnMOy/C8TslXfrXPnVgiTIW/s2lRBuWZzkWcCLCFJb0AUoHanA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\bavel\\Documents\\_NOROFF\\BACKEND C#\\Assignment01\\rs-duplicate\\rs-duplicate\\RsDuplicate.csproj",
+  "projectFilePath": "C:\\Noroff\\CSharp\\Assignments\\Assignment01\\rs-duplicate\\rs-duplicate\\RsDuplicate.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

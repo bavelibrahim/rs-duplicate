@@ -19,7 +19,7 @@ namespace rs_test
 
             HeroAttributes heroAttributes_AfterLeveLup = new HeroAttributes(2,2,13);
 
-            Assert.Equivalent(hero.heroAttributes, heroAttributes_AfterLeveLup);
+            Assert.Equivalent(heroAttributes_AfterLeveLup, hero.heroAttributes);
         }
 
         [Fact]
@@ -30,7 +30,7 @@ namespace rs_test
 
             HeroAttributes heroAttributes_AfterLeveLup = new HeroAttributes(2, 12, 2);
 
-            Assert.Equivalent(hero.heroAttributes, heroAttributes_AfterLeveLup);
+            Assert.Equivalent(heroAttributes_AfterLeveLup, hero.heroAttributes);
         }
 
         [Fact]
@@ -41,7 +41,7 @@ namespace rs_test
 
             HeroAttributes heroAttributes_AfterLeveLup = new HeroAttributes(3,10,2);
 
-            Assert.Equivalent(hero.heroAttributes, heroAttributes_AfterLeveLup);
+            Assert.Equivalent(heroAttributes_AfterLeveLup, hero.heroAttributes);
         }
 
         [Fact]
@@ -52,7 +52,7 @@ namespace rs_test
 
             HeroAttributes heroAttributes_AfterLeveLup = new HeroAttributes(8,4,2);
 
-            Assert.Equivalent(hero.heroAttributes, heroAttributes_AfterLeveLup);
+            Assert.Equivalent(heroAttributes_AfterLeveLup, hero.heroAttributes);
         }
 
     }

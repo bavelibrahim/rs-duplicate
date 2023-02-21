@@ -20,7 +20,7 @@ namespace rs_test
             Armor armor = new("Armor", 20, Slots.Body, attributes, ArmorTypes.Plate);
 
             string armorName = "Armor";
-            Assert.Equal(armor.name, armorName);
+            Assert.Equal(armorName, armor.name);
         }
 
         [Fact]
@@ -33,7 +33,7 @@ namespace rs_test
             Armor armor = new("Armor", 20, Slots.Body, attributes, ArmorTypes.Plate);
 
             int requiredLevel = 20;
-            Assert.Equal(armor.requiredLevel, requiredLevel);
+            Assert.Equal(requiredLevel, armor.requiredLevel);
         }
 
         [Fact]
@@ -47,7 +47,7 @@ namespace rs_test
 
             Slots slot = Slots.Head;
             
-            Assert.Equal(armor.slots, slot);
+            Assert.Equal(slot, armor.slots);
         }
 
         [Fact]
@@ -61,7 +61,7 @@ namespace rs_test
 
             Slots slot = Slots.Body;
 
-            Assert.Equal(armor.slots, slot);
+            Assert.Equal(slot, armor.slots);
         }
 
 
@@ -76,7 +76,7 @@ namespace rs_test
 
             Slots slot = Slots.Legs;
 
-            Assert.Equal(armor.slots, slot);
+            Assert.Equal(slot, armor.slots);
         }
 
         [Fact]
@@ -90,7 +90,7 @@ namespace rs_test
 
             ArmorTypes armorTypes = ArmorTypes.Plate;
 
-            Assert.Equivalent(armor.ArmorTypes, armorTypes);
+            Assert.Equivalent(armorTypes, armor.ArmorTypes);
         }
 
         [Fact]
@@ -104,7 +104,7 @@ namespace rs_test
 
             HeroAttributes attributes_forChecking = new(1, 2, 0);
 
-            Assert.Equivalent(armor.armorAttribute, attributes_forChecking);
+            Assert.Equivalent(attributes_forChecking, armor.armorAttribute);
         }
 
 

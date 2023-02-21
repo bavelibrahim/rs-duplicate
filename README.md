@@ -38,7 +38,7 @@ Tools that were used in this project:
 ## Installation
 
 clone the repo like this:
-`git clone https://github.com/bavelibrahim/Noroff-Assignment02.git`
+`git clone https://github.com/bavelibrahim/rs-duplicate`
 
 It is also possible to download the repo as a .zip.
 
